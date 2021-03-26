@@ -30,6 +30,8 @@ class PID {
    * @output The total PID error
    */
   double TotalError();
+  
+  double CalculateSteerValue();
 
  private:
   /**
