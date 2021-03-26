@@ -60,6 +60,7 @@ int main() {
           double speed = std::stod(j[1]["speed"].get<string>());
           double angle = std::stod(j[1]["steering_angle"].get<string>());
           double steer_value;
+		  double speed_value;
           /**
            * TODO: Calculate steering value here, remember the steering value is
            *   [-1, 1].
