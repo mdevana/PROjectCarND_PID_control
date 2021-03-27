@@ -40,7 +40,7 @@ int main() {
    */
    pid.Init(0.125,0.0001,1.0);
    //speed_pid.Init(0.1,0.001,0.0);
-   speed_pid.Init(0.0,0.0,0.0);
+   speed_pid.Init(0.1,0.0,0.0);
 
   h.onMessage([&pid,&speed_pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
                      uWS::OpCode opCode) {
