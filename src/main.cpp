@@ -73,7 +73,7 @@ int main() {
            steer_value = pid.TotalError();
 		   speed_pid.UpdateError(cte);
            //speed_value = speed_pid.TotalError();
-		   speed_value = speed;
+		   speed_value = 0;
 		   
           // DEBUG
           //std::cout << "CTE: " << cte << " Steering Value: " << steer_value<<" Speed Value: " <<speed_value<< std::endl;
