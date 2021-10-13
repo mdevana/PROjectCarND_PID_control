@@ -75,7 +75,7 @@ int main() {
 		   speed_value = speed;
 		   
           // DEBUG
-          std::cout << "CTE: " << cte << " Steering Value: " << steer_value<<" Speed Value: " <<speed_value<< std::endl;
+          //std::cout << "CTE: " << cte << " Steering Value: " << steer_value<<" Speed Value: " <<speed_value<< std::endl;
 		  std::cout <<cte<< std::endl;
 
           json msgJson;
