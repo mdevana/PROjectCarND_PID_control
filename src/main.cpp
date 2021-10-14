@@ -62,7 +62,7 @@ int main() {
           double speed = std::stod(j[1]["speed"].get<string>());
           double angle = std::stod(j[1]["steering_angle"].get<string>());
           double steer_value;
-		  double speed_value;
+		  double throttle_value;
           /**
            * TODO: Calculate steering value here, remember the steering value is
            *   [-1, 1].
@@ -72,7 +72,7 @@ int main() {
 		   pid.UpdateError(cte);
            steer_value = pid.CalculateResponseValue();
 		   speed_pid.UpdateError(cte);
-           speed_value = speed_pid.CalculateResponseValue();
+           throttle_value = speed_pid.CalculateResponseValue();
 		   
 		   
           // DEBUG
@@ -82,7 +82,7 @@ int main() {
           json msgJson;
           msgJson["steering_angle"] = steer_value;
 		  msgJson["speed"] = speed_value;
-          msgJson["throttle"] = speed_value;
+          msgJson["throttle"] = throttle_value;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           //std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
