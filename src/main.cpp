@@ -75,7 +75,7 @@ int main() {
 			   steer_value = 1.0;
            if(steer_value < -1.0) 
 			   steer_value = -1.0;
-		   
+		   std::cout <<speed-30<<": speed error"<< std::endl;
 		   speed_pid.UpdateError(speed-30);
            throttle_value = speed_pid.CalculateResponseValue();
 		   if(throttle_value > 1.0) 
