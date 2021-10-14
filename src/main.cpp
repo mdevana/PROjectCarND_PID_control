@@ -70,9 +70,7 @@ int main() {
            *   Maybe use another PID controller to control the speed!
            */
 		   pid.UpdateError(cte);
-           steer_value = pid.TotalError();
-		   speed_pid.UpdateError(cte);
-           speed_value = speed_pid.TotalError();
+           steer_value = pid.CalculateResponseValue();
 		   
 		   
           // DEBUG
