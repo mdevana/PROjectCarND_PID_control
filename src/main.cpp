@@ -87,14 +87,14 @@ int main() {
           // DEBUG
           //std::cout << "CTE: " << cte << " Steering Value: " << steer_value<<" Speed Value: " <<speed_value<< std::endl;
 		  //std::cout <<cte<< std::endl;
-		  std::cout <<steer_value<<": steer value"<< std::endl;
+		  std::cout <<throttle_value<<": throtle value"<< std::endl;
 		  if (steer_value > 1 || steer_value < -1)
 			  std::cout <<steer_value<<"out of limits"<< std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
 		  msgJson["speed"] = 10;
-          msgJson["throttle"] = 0.3;
+          msgJson["throttle"] = throttle_value;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           //std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
