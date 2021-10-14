@@ -81,7 +81,7 @@ int main() {
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-		  msgJson["speed"] = speed_value;
+		  msgJson["speed"] = 30;
           msgJson["throttle"] = throttle_value;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           //std::cout << msg << std::endl;
