@@ -86,7 +86,9 @@ int main() {
 		   
           // DEBUG
           //std::cout << "CTE: " << cte << " Steering Value: " << steer_value<<" Speed Value: " <<speed_value<< std::endl;
-		  std::cout <<cte<< std::endl;
+		  //std::cout <<cte<< std::endl;
+		  if (steer_value > 1 || steer_value < -1)
+			  std::cout <<steer_value<<"out of limits"<< std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
