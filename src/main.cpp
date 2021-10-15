@@ -39,7 +39,7 @@ int main() {
    * TODO: Initialize the pid variable.
    */
    //pid.Init(0.20,0.0000,0.0);
-   steer_pid.Init(0.25,0.000001,2);
+   steer_pid.Init(0.125,0.000001,2);
    speed_pid.Init(0.25,0.001,0.0);
 
   h.onMessage([&steer_pid,&speed_pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
@@ -65,10 +65,10 @@ int main() {
 
 		   steer_pid.UpdateError(cte);
            steer_value = steer_pid.CalculateResponseValue();
-		   /*if(steer_value > 1.0) 
+		   if(steer_value > 1.0) 
 			   steer_value = 1.0;
            if(steer_value < -1.0) 
-			   steer_value = -1.0;*/
+			   steer_value = -1.0;
 		   
 		   double Error_speed = speed-30;
 		   speed_pid.UpdateError(Error_speed);
