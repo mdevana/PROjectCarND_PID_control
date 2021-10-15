@@ -35,8 +35,8 @@ void PID::UpdateError(double cte) {
 
 double PID::CalculateResponseValue() {
   /**
-   * TODO: Calculate and return the total error
+   * Calculate and return the total error
    */
-  return (-1 * Kp * p_error - Kd * d_error - Ki * i_error);  // TODO: Add your total error calc here!
+  return (-1 * Kp * p_error - Kd * d_error - Ki * i_error);  
 }
 

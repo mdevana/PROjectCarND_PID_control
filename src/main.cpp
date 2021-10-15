@@ -36,10 +36,10 @@ int main() {
   PID steer_pid;
   PID speed_pid;
   /**
-   * Initialize the pid variable.
+   * Initializing the pid variables.
    */
    
-   //steer_pid.Init(0.15,0.00001,3);
+   
    steer_pid.Init(0.15,0.00001,3.0);
    speed_pid.Init(0.25,0.0001,0.0);
 
@@ -63,14 +63,16 @@ int main() {
           double angle = std::stod(j[1]["steering_angle"].get<string>());
           double steer_value;
 		  double throttle_value;
-
+		
+		//update cross track error and calculate new steering
 		   steer_pid.UpdateError(cte);
            steer_value = steer_pid.CalculateResponseValue();
 		   if(steer_value > 1.0) 
 			   steer_value = 1.0;
            if(steer_value < -1.0) 
 			   steer_value = -1.0;
-		   
+		
+			//update speed error and calculate new throttle value
 		   double Error_speed = speed-30;
 		   speed_pid.UpdateError(Error_speed);
            throttle_value = speed_pid.CalculateResponseValue();
