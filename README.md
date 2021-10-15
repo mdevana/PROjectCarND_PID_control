@@ -1,6 +1,12 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+The goal of project is as follows
+* Create a PID control algorithm to guide a vehicle around a track.
+* Tune PID hyperparameters (Kp ,Ki ,Kd) so the vehicle smoothly follows the road, minimizing the cross-track error.
+
+The description and implementation of the project is availbe as article in Medium (https://medium.com/@madhusudhan.d/tuning-pid-controller-for-self-driving-cars-3813f7f18eb0) or as PDF(Project8_PID_Controller_description.pdf) file in the repository.
+
 ---
 
 ## Dependencies
@@ -26,7 +32,6 @@ Self-Driving Car Engineer Nanodegree Program
     Some function signatures have changed in v0.14.x. See [this PR](https://github.com/udacity/CarND-MPC-Project/pull/3) for more details.
 * Simulator. You can download these from the [project intro page](https://github.com/udacity/self-driving-car-sim/releases) in the classroom.
 
-Fellow students have put together a guide to Windows set-up for the project [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Kidnapped_Vehicle_Windows_Setup.pdf) if the environment you have set up for the Sensor Fusion projects does not work for this project. There's also an experimental patch for windows in this [PR](https://github.com/udacity/CarND-PID-Control-Project/pull/3).
 
 ## Basic Build Instructions
 
