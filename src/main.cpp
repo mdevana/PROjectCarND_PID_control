@@ -69,8 +69,9 @@ int main() {
 			   steer_value = 1.0;
            if(steer_value < -1.0) 
 			   steer_value = -1.0;
-		   std::cout <<speed-30<<": speed error"<< std::endl;
-		   speed_pid.UpdateError(speed-30);
+		   
+		   Error_speed = speed-30;
+		   speed_pid.UpdateError(Error_speed);
            throttle_value = speed_pid.CalculateResponseValue();
 		   if(throttle_value > 1.0) 
 			   throttle_value = 1.0;
@@ -79,15 +80,11 @@ int main() {
 		   
 		   
           // DEBUG
-          //std::cout << "CTE: " << cte << " Steering Value: " << steer_value<<" Speed Value: " <<speed_value<< std::endl;
-		  //std::cout <<cte<< std::endl;
-		  std::cout <<throttle_value<<": throtle value"<< std::endl;
-		  if (steer_value > 1 || steer_value < -1)
-			  std::cout <<steer_value<<"out of limits"<< std::endl;
+          std::cout <<cte << " "<<Error_speed<<std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-		  msgJson["speed"] = 10;
+		  msgJson["speed"] = speed;
           msgJson["throttle"] = throttle_value;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           //std::cout << msg << std::endl;
