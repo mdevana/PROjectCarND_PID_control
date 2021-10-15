@@ -39,7 +39,7 @@ int main() {
    * TODO: Initialize the pid variable.
    */
    //pid.Init(0.20,0.0000,0.0);
-   steer_pid.Init(0.25,0.000000,4);
+   steer_pid.Init(0.25,0.000001,2);
    speed_pid.Init(0.25,0.001,0.0);
 
   h.onMessage([&steer_pid,&speed_pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
