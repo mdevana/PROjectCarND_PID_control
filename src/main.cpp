@@ -36,10 +36,11 @@ int main() {
   PID steer_pid;
   PID speed_pid;
   /**
-   * TODO: Initialize the pid variable.
+   * Initialize the pid variable.
    */
-   //pid.Init(0.20,0.0000,0.0);
-   steer_pid.Init(0.15,0.00001,3);
+   
+   //steer_pid.Init(0.15,0.00001,3);
+   steer_pid.Init(0.15,0.00000,0.5);
    speed_pid.Init(0.25,0.001,0.0);
 
   h.onMessage([&steer_pid,&speed_pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, 
@@ -78,6 +79,7 @@ int main() {
            if(throttle_value < -1.0) 
 			   throttle_value = -1.0;
 		   
+		   throttle_value = 0.3
 		   
           // DEBUG
           std::cout <<cte << " "<<Error_speed<<std::endl;
