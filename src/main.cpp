@@ -79,7 +79,7 @@ int main() {
            if(throttle_value < -1.0) 
 			   throttle_value = -1.0;
 		   
-		   throttle_value = 0.3
+		   throttle_value = 0.3;
 		   
           // DEBUG
           std::cout <<cte << " "<<Error_speed<<std::endl;
