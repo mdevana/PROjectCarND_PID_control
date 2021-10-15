@@ -65,10 +65,10 @@ int main() {
 
 		   steer_pid.UpdateError(cte);
            steer_value = steer_pid.CalculateResponseValue();
-		   if(steer_value > 1.0) 
+		   /*if(steer_value > 1.0) 
 			   steer_value = 1.0;
            if(steer_value < -1.0) 
-			   steer_value = -1.0;
+			   steer_value = -1.0;*/
 		   
 		   double Error_speed = speed-30;
 		   speed_pid.UpdateError(Error_speed);
